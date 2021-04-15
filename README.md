@@ -1,3 +1,3 @@
-# CommScope JavaScript Coding Challenge
+# DataStuctuce JavaScript Coding Challenge
 
 Simply open index.html in your browser.
