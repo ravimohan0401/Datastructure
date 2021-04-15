@@ -21,19 +21,19 @@
   var notification2;
   document.addEventListener('keydown', function (e) {
     var keyCode = e.keyCode;
-    keyDownCount++;
     //Prevent the key press from bubbling up. The default behaviour for the spacebar is to scroll down the page.
     e.preventDefault();
 
-    if (keyCode == 32 && keyDownCount == 4) {
+    if (keyCode === 32 && ++keyDownCount === 4) {
       notification2 = notificationManager.create({
         text: 'Warning: Time is running out!',
         className: "warning",
-        timeout: 13000
+        timeout: 3000
       })
       notification2.show();
+      keyDownCount = 0;
       //console.log(notification1);
-    } else if (keyCode == 32 && keyDownCount == 5 && notification2) {
+    } else if (keyCode === 32 && keyDownCount === 1 && notification2?.isVisible()) {
       notification2.hide();
       keyDownCount = 0;
       //keyDownCount--;
